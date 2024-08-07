@@ -97,14 +97,20 @@ function App() {
                 type="number"
                 ref={ppuRef}
                 value={ppu}
-                onChange={(e) => setPpu(e.target.value)} readOnly
+                onChange={(e) => setPpu(e.target.value)}
+                readOnly
               />
             </Col>
           </Row>
           <Row>
             <Col>
               <Form.Label>Quantity</Form.Label>
-              <Form.Control type="number" ref={qtyRef} defaultValue={1} />
+              <Form.Control
+                type="number"
+                ref={qtyRef}
+                defaultValue={1}
+                min={1} // Prevent negative values
+              />
             </Col>
           </Row>
           <Row>
@@ -114,7 +120,7 @@ function App() {
                 type="number"
                 ref={discountRef}
                 defaultValue={0}
-                min={0} // Prevent negative values in the UI
+                min={0} // Prevent negative values
                 onChange={handleDiscountChange}
               />
             </Col>
